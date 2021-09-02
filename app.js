@@ -1,20 +1,42 @@
-// npm - global command, comes with node 
-// npm --version
+const { readFile, writeFile } = require('fs').promises;
+// const { result } = require('lodash');
+// const util = require('util');
+// const readFilePromise = util.promisify(readFile)
+// const writeFilePromise = util.promisify(writeFile)
 
-// local dependency - use it only in this particular object
-// npm 0 <packagename>
+const start = async () => {
+    
+    try {
+        const first = await readFile('./content/first.txt', 'utf-8');
+        const second = await readFile('./content/second.txt', 'utf-8');
+        await writeFile(
+            './content/result-mind-grenade.txt',
+        `This Is Awesome ${first} ${second}`,
+        { flag: 'a' })
+        console.log(first, second)
+    } catch (error) {
+        console.log(error)
+    }
+}
 
-// global dependency - use it in any project
-// npm install -g <packagename>
+start()
+// const getText = (path) => {
+//     return new Promise((resolve, reject) => {
+//         readFile('./content/first.txt', 'utf-8', (err, data) => {
+//             if (err)  {
+//                 reject(err)
+//             }
+//             else {
+//                 resolve(data)
+//             }
+//         })
+//     })
+// }
+// getText('./content/first.txt')
+//     .then(result => console.log(result))
+//     .catch(err => console.log(err))
 
-// package.json - manifest file (stores important info about project/package)
-// manual approach (create package.json in the root, create properties etc)
-// npm init (step by step, press enter to skip)
-// npm init -y (evrything default)
 
-const _ = require('lodash');
 
-const items = [1,[2,[3,[4]]]]
-const newItems = _.flattenDeep(items)
-console.log(newItems);
-console.log("Assalamualaikum"); 
+
+
