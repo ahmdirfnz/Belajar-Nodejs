@@ -5,7 +5,7 @@ let numbers = [1,6,4,3,7,2,5];
 // }
 // const oddNumbers = numbers.filter(isOddNumber);
 
-// Method 2
+// Method 2  | Callback
 // let oddNumbers = numbers.filter(number => number % 2);
 
 // Method 3
