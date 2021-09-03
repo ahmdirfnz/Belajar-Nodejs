@@ -9,7 +9,7 @@ let numbers = [1,6,4,3,7,2,5];
 // let oddNumbers = numbers.filter(number => number % 2);
 
 // Method 3
-let oddNumbers = numbers.filter(function(number) {
+let oddNumbers = numbers.filter( () => {
     return number % 2;
 });
 
